@@ -18,6 +18,7 @@ export class LoginPage extends BasePage {
     private readonly passwordInput = '[data-test="password"]';
     private readonly loginButton = 'text=LOGIN';
     private readonly productsHeader = '.product_label';
+    private readonly errorMessage = '[data-test="error"]';
 
     constructor(page: Page) {
         super(page, 'https://www.saucedemo.com/v1/');
@@ -65,4 +66,9 @@ export class LoginPage extends BasePage {
         const headerText = await this.getElementText(this.productsHeader);
         return headerText === 'Products';
     }
+
+    async getErrorMessage(): Promise<string> {
+        await this.waitForElement(this.errorMessage);
+        return this.getElementText(this.errorMessage) as Promise<string>;
+    }   
 }
