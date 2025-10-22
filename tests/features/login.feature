@@ -10,3 +10,8 @@ Característica: Funcionalidad de inicio de sesión
     Dado que Michael está en la página de inicio de sesión
     Cuando inicia sesión con usuario "locked_out_user" y contraseña "secret_sauce"
     Entonces debería ver el mensaje de error
+
+  Escenario: Inicio de sesión fallido por usuario incorrecto
+    Dado que Michael está en la página de inicio de sesión
+    Cuando inicia sesión con usuario "test" y contraseña "qwerty"
+    Entonces debería ver el mensaje de error de usuario incorrecto
