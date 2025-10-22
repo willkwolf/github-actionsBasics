@@ -37,7 +37,7 @@ test.describe('Login Tests', () => {
         );
 
         // Then
-        const errorMessageVisible = await Ensure.that(page).containsText('Epic sadface: Sorry, this user has been locked out.', Targets.LOGIN_PAGE.ERROR_MESSAGE);
-        expect(errorMessageVisible).toBeTruthy();
+        const isProductsVisible = await Ensure.that(page).containsText('Epic sadface: Sorry, this user has been locked out.', Targets.LOGIN_PAGE.ERROR_MESSAGE);
+        expect(isProductsVisible).toBeTruthy();
     });
 });
