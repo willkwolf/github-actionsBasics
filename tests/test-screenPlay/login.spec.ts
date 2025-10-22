@@ -2,6 +2,7 @@ import { test, expect } from '@playwright/test';
 import { Actor } from '../../e2e-screenplay/actors/Actor';
 import { OpenApp, Login } from '../../e2e-screenplay/tasks/Tasks';
 import { Ensure } from '../../e2e-screenplay/questions/Questions';
+import { Targets } from '../../e2e-screenplay/targets/UIElements';
 
 test.describe('Login Tests', () => {
     test('should login successfully and see products page', async ({ page }) => {
@@ -18,7 +19,7 @@ test.describe('Login Tests', () => {
         );
 
         // Then
-        const isProductsVisible = await Ensure.that(page).containsText('Products');
+        const isProductsVisible = await Ensure.that(page).containsText('Products', Targets.PRODUCTS_PAGE.PRODUCTS_CONTAINER);
         expect(isProductsVisible).toBeTruthy();
     });
 
@@ -36,7 +37,7 @@ test.describe('Login Tests', () => {
         );
 
         // Then
-        const errorMessageVisible = await Ensure.that(page).containsText('Epic sadface: Sorry, this user has been locked out.');
+        const errorMessageVisible = await Ensure.that(page).containsText('Epic sadface: Sorry, this user has been locked out.', Targets.LOGIN_PAGE.ERROR_MESSAGE);
         expect(errorMessageVisible).toBeTruthy();
     });
 });
