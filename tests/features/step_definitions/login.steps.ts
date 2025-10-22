@@ -19,6 +19,7 @@ Before(async function () {
     page = await context.newPage();
 });
 
+
 // Cerrar el navegador después de cada escenario
 After(async function () {
     await browser.close();
