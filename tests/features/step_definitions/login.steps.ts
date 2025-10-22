@@ -47,3 +47,8 @@ Then('debería ver el mensaje de error', async function () {
     const isErrorVisible = await Ensure.that(page).containsText('Epic sadface: Sorry, this user has been locked out.', Targets.LOGIN_PAGE.ERROR_MESSAGE);
     expect(isErrorVisible).toBeTruthy();
 });
+
+Then('debería ver el mensaje de error de usuario incorrecto', async function () {
+    const isErrorVisible = await Ensure.that(page).containsText('Epic sadface: Username and password do not match any user in this service', Targets.LOGIN_PAGE.ERROR_MESSAGE);
+    expect(isErrorVisible).toBeTruthy();
+});
