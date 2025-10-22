@@ -18,4 +18,13 @@ test.describe('Login Tests', () => {
         const isLoginSuccessful = await loginPage.isLoginSuccessful();
         expect(isLoginSuccessful).toBeTruthy();
     });
+
+    test('should login locked out user and see error message', async () => {
+        // When: User logs in with locked out user credentials
+        await loginPage.login(testConfig.credentials.lockedOutUser);
+        
+        // Then: Login should fail
+        const isLoginSuccessful = await loginPage.isLoginSuccessful();
+        expect(isLoginSuccessful).toBeFalsy();
+    });
 });

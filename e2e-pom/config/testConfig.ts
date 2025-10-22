@@ -8,6 +8,11 @@ export const testConfig = {
         standardUser: {
             username: 'standard_user',
             password: 'secret_sauce'
+        },
+        lockedOutUser: {
+            username: 'locked_out_user',
+            password: 'secret_sauce'
         }
-    }
+    },
+    textErrorLogin: 'Epic sadface: Sorry, this user has been locked out.'
 };
