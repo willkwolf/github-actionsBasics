@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test:cucumber": "cucumber-js"
+    "test:cucumber": "cucumber-js",
+    "test:screenplay": "playwright test test-screenPlay/"
   },
   "keywords": [],
   "author": "",
