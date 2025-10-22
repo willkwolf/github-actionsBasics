@@ -20,8 +20,8 @@ export class ProductsContainerQuestion {
         this.page = page;
     }
 
-    async containsText(expectedText: string, selector: string): Promise<boolean> {
-        const text = await Text.from(this.page, selector);
+    async containsText(expectedText: string, target: string): Promise<boolean> {
+        const text = await Text.from(this.page, target);
         return text.includes(expectedText);
     }
 }
