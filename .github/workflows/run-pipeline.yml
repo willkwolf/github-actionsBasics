@@ -34,4 +34,4 @@ jobs:
         with:
           name: BDD-report
           path: BDD-report/
-          retention-days: 30
+          retention-days: 15
