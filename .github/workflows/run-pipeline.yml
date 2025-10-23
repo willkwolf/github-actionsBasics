@@ -1,4 +1,4 @@
-name: Playwright Test
+name: BDD Test
 
 on:
   pull_request:
@@ -26,12 +26,12 @@ jobs:
         run: npx playwright install --with-deps
 
       - name: Run Playwright tests
-        run: npm run test:screenplay
+        run: npm run test:cucumber
 
-      - name: Archive Playwright Test Results
+      - name: Archive BDD Test Results
         uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: playwright-report
-          path: playwright-report/
+          name: BDD-report
+          path: BDD-report/
           retention-days: 30
